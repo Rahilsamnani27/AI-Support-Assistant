@@ -2,7 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const rateLimit = require('express-rate-limit');
-const Anthropic = require('@anthropic-ai/sdk');
+const OpenAI = require('@anthropic-ai/sdk');
 const { getDb, run, all, get } = require('./db');
 const docs = require('./docs.json');
 
@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 5000;
 
 app.use(cors({ origin: process.env.FRONTEND_URL || 'http://localhost:3000' }));
 app.use(express.json());
-
+app.get('/', (req, res) => res.send('API is running'));
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000,
   max: 50,
@@ -19,7 +19,7 @@ const limiter = rateLimit({
 });
 app.use('/api/', limiter);
 
-const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+const openAI = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 const docsContext = docs.map(d => `**${d.title}**\n${d.content}`).join('\n\n');
 
 // POST /api/chat
@@ -50,15 +50,17 @@ Do NOT guess, hallucinate, or use any outside knowledge.
 PRODUCT DOCUMENTATION:
 ${docsContext}`;
 
-    const response = await anthropic.messages.create({
-      model: 'claude-haiku-4-5-20251001',
+    const response = await openAI.chat.completions.create({
+      model: 'gpt-4o-mini',
       max_tokens: 512,
-      system: systemPrompt,
-      messages: [...chatHistory, { role: 'user', content: message.trim() }]
+      messages: [
+    { role: 'system', content: systemPrompt },
+    ...chatHistory,
+    { role: 'user', content: message.trim() }
+  ]
     });
-
-    const reply = response.content[0].text;
-    const tokensUsed = (response.usage?.input_tokens || 0) + (response.usage?.output_tokens || 0);
+    const reply = response.choices[0].message.content;
+    const tokensUsed = response.usage?.total_tokens || 0;
     run("INSERT INTO messages (session_id, role, content) VALUES (?, 'assistant', ?)", [sessionId, reply]);
 
     return res.json({ reply, tokensUsed });
