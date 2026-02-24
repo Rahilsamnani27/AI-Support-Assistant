@@ -1,0 +1,42 @@
+[
+  {
+    "title": "Reset Password",
+    "content": "Users can reset their password from Settings > Security. Click 'Forgot Password' on the login page, enter your registered email, and follow the link sent to your inbox. The reset link expires in 30 minutes."
+  },
+  {
+    "title": "Refund Policy",
+    "content": "Refunds are allowed within 7 days of purchase. To request a refund, go to Account > Orders, select the order, and click 'Request Refund'. Refunds are processed within 5-7 business days back to the original payment method."
+  },
+  {
+    "title": "Account Deletion",
+    "content": "To delete your account, navigate to Settings > Account > Delete Account. This action is irreversible and will permanently remove all your data, subscriptions, and purchase history."
+  },
+  {
+    "title": "Subscription Plans",
+    "content": "We offer three plans: Basic (free), Pro ($9.99/month), and Enterprise ($49.99/month). Pro includes unlimited storage and priority support. Enterprise adds team management, SSO, and dedicated account manager."
+  },
+  {
+    "title": "Payment Methods",
+    "content": "We accept Visa, MasterCard, American Express, PayPal, and UPI. All payments are encrypted using SSL. You can manage payment methods under Account > Billing."
+  },
+  {
+    "title": "Two-Factor Authentication",
+    "content": "Enable 2FA from Settings > Security > Two-Factor Authentication. We support authenticator apps (Google Authenticator, Authy) and SMS-based OTP. It is strongly recommended to enable 2FA for account security."
+  },
+  {
+    "title": "Data Export",
+    "content": "You can export all your data from Settings > Privacy > Export Data. The export will be prepared and emailed to you as a ZIP file within 24 hours. Exports include messages, files, and account history."
+  },
+  {
+    "title": "Contact Support",
+    "content": "Reach our support team via email at support@weitredge.com, live chat (available 9am-6pm IST on weekdays), or by submitting a ticket at help.weitredge.com. Pro and Enterprise users get priority response within 2 hours."
+  },
+  {
+    "title": "App Download",
+    "content": "Download the Weitredge app from the Apple App Store or Google Play Store. Search for 'Weitredge' and install the official app. The app requires iOS 13+ or Android 8.0+."
+  },
+  {
+    "title": "Storage Limits",
+    "content": "Basic plan users get 5GB storage, Pro users get unlimited storage, and Enterprise users get unlimited storage with dedicated cloud regions. Storage usage can be viewed in Settings > Storage."
+  }
+]
