@@ -1,4 +1,4 @@
-# Weitredge AI Support Assistant
+# Innoira AI Support Assistant
 
 A full-stack AI-powered support chatbot built with React, Node.js/Express, SQLite, and Claude (Anthropic).
 
