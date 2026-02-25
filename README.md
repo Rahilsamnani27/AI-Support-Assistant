@@ -11,7 +11,7 @@ A full-stack AI-powered support chatbot built with React, Node.js/Express, SQLit
 | Frontend | React.js 18, react-markdown |
 | Backend | Node.js, Express |
 | Database | SQLite (via better-sqlite3) |
-| LLM | Claude (Anthropic) — claude-haiku-4-5 |
+| LLM | OpenAi — gpt-5-2 |
 | Rate Limiting | express-rate-limit |
 
 ---
@@ -49,7 +49,7 @@ project/
 ```bash
 cd backend
 cp .env.example .env
-# Edit .env and set your ANTHROPIC_API_KEY
+# Edit .env and set your OpenAI_API_KEY
 npm install
 npm start
 # Server runs on http://localhost:5000
