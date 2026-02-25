@@ -1,6 +1,6 @@
 # Innoira AI Support Assistant
 
-A full-stack AI-powered support chatbot built with React, Node.js/Express, SQLite, and Claude (Anthropic).
+A full-stack AI-powered support chatbot built with React, Node.js/Express, SQLite, and Open AI.
 
 ---
 
@@ -42,7 +42,7 @@ project/
 
 ### Prerequisites
 - Node.js >= 18
-- An Anthropic API key (get one at https://console.anthropic.com)
+- An OpenAI API key (get one at https://console.openai.com)
 
 ### 1. Backend
 
